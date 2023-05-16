@@ -2,15 +2,27 @@
 <html>
   <head>
     <title>Tubuyaita</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application' %>
   </head>
+
+  <header>
+    <%= link_to image_tag("main_logo.png",class:"logo_image"), posts_path %>
+    <ul class="top_menu clearfix">
+    <li><a href="">ホーム(一覧表示)</a></li>
+    <li><a href="">つぶやく！(新規投稿と投稿確認)</a></li>
+    <li><a href="">つぶやきを消す(削除機能)</a></li>
+  </ul>
+  
+  </ul>
+  
+  </header>
 
   <body>
     <%= yield %>
   </body>
 </html>
+
+
+<footer>
+	<p>Copyright &copy; 2023 OnO.</p>
+</footer>
