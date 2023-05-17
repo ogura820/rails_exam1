@@ -22,10 +22,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
   end
 
-  def show
-  end
-
-
   def destroy
     @post.destroy
     redirect_to posts_path, notice: "つぶやきを削除しました！"

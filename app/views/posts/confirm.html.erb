@@ -3,6 +3,7 @@
 <%= form_with(model: @post, local: true) do |form| %>
   <%= form.hidden_field :content %>
   <p>つぶやき:<%= @post.content %></p>
-  <%= form.submit  "つぶやく" %>
+  <%= form.submit  "つぶやく" %><BR>
+  <%= link_to 'つぶやき入力に戻る（仮置き）', new_post_path %>
 <% end %>
 
