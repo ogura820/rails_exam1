@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :update, :destroy]
+
   def index
     @posts = Post.all
   end
@@ -18,11 +20,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+  end
 
 
-    private
-    
-    def post_params
-      params.require(:post).permit(:content)
-    end
+  def destroy
+    @post.destroy
+    redirect_to posts_path, notice: "つぶやきを削除しました！"
+  end
+
+
+      private
+
+      def post_params
+        params.require(:post).permit(:content)
+      end
+
+      def set_post
+        @post = Post.find(params[:id])
+      end
+
   end
