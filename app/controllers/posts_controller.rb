@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: [:show, :update, :destroy], except: [:confirm]
 
   def index
     @posts = Post.all
@@ -19,6 +19,13 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def confirm
+    @post = Post.new(post_params)
+  end
+
+  
+
 
   def show
   end

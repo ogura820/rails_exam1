@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :posts do
 
-  resources :posts
+    collection do
+      post :confirm
+    end
+  end
 end
