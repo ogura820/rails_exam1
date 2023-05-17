@@ -5,15 +5,14 @@
     <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>つぶけませんでした！！！<BR>1-140字でつぶやいてね！</h2>
-
     </div>
-  <% end %>
+<% end %>
 
-    <div class="blog_content">
+<div class="blog_content">
       <%= form.label :なにをつぶやく？ %><BR>
       <%= form.text_field :content %>
-    </div>
+</div>
     <%= form.submit %>
     <BR>
     <%= link_to 'つぶやき入力に戻る', posts_path %>
-  <% end %>
+<% end %>
