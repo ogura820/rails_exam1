@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Tubuyaita</title>
     <%= stylesheet_link_tag 'application' %>
@@ -10,17 +11,13 @@
     <ul class="top_menu clearfix">
     <li><a><%= link_to 'つぶやきをみる(一覧表示)', posts_path %></a></li>
     <li><a><%= link_to 'つぶやく！(新規投稿と投稿確認)', new_post_path %></a></li>
-  </ul>
-  
-  </ul>
-  
   </header>
 
   <body>
     <%= yield %>
   </body>
-</html>
 
+</html>
 
 <footer>
 	<p>Copyright &copy; 2023 OnO.</p>
