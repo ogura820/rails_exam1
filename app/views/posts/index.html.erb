@@ -2,19 +2,19 @@
 
 <table>
     <tr>
-        <th>いままでのつぶやき</th>
+        <th>いままでのつぶやき（一覧）</th>
     </tr>
 
     <% @posts.reverse_each do |post| %>
         <tr>
             <td><%= post.content %></td>
-            <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
+            <td><%= link_to "つぶやきを編集する", edit_post_path(post.id) %></td>
             <td><%= button_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
         </tr>
 <% end %>
 </table>
 
 <BR>
-<%= link_to 'つぶやき入力に戻る（仮置き）', new_post_path %>
+<%= link_to 'なにかつぶやく(新規投稿）', new_post_path %>
 
 
