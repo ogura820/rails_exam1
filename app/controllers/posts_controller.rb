@@ -11,10 +11,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to posts_path, notice: "つぶやいちゃった"
-    else
+    if params[:back]
       render :new
+    else
+      if @post.save
+        redirect_to posts_path, notice: "つぶやいちゃった"
+      else
+        render :new
+      end
     end
   end
 
